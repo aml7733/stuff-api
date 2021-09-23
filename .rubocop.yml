@@ -6,3 +6,10 @@ Metrics/BlockLength:
     - "Rakefile"
     - "**/*.rake"
     - "spec/**/*.rb"
+Rails/FilePath:
+  Exclude:
+    - "spec/rails_helper.rb"
+    - "config/environments/**"
+Layout/LineLength:
+  Exclude:
+    - "config/initializers/**"

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Custom responder works with devise to send error
 class ApplicationResponder < ActionController::Responder
   include Responders::FlashResponder
   include Responders::HttpCacheResponder
