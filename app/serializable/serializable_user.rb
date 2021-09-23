@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# SerializableUser class uses jsonapi, only returns email for users
 class SerializableUser < JSONAPI::Serializable::Resource
   type 'users'
 

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Registrations controller adds user, inherits from Devise
 class RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)

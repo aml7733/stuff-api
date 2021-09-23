@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Api
+  # Users controller adds basic CRUD functionality, only show for now
   class UsersController < Api::BaseController
     before_action :find_user, only: %w[show]
 

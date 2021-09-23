@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Sessions controller inherits from devise, offers custom response handlers
 class SessionsController < Devise::SessionsController
   private
 

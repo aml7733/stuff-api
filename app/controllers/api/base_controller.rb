@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Api
+  # BaseController inherits from rails, adds basic shared utility and is
   class BaseController < ApplicationController
     before_action :authenticate_user!
 

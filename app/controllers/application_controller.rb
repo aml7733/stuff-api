@@ -2,6 +2,7 @@
 
 require 'application_responder'
 
+# Application controller sets custom responder, defines shared utility for rendering response
 class ApplicationController < ActionController::API
   self.responder = ApplicationResponder
   respond_to :html
