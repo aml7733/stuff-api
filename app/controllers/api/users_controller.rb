@@ -1,14 +1,17 @@
-class Api::UsersController < Api::BaseController
-  
-  before_action :find_user, only: %w[show]
+# frozen_string_literal: true
 
-  def show
-    render_jsonapi_response(@user)
-  end
+module Api
+  class UsersController < Api::BaseController
+    before_action :find_user, only: %w[show]
 
-  private
+    def show
+      render_jsonapi_response(@user)
+    end
 
-  def find_user
-    @user = User.find(params[:id])
+    private
+
+    def find_user
+      @user = User.find(params[:id])
+    end
   end
 end

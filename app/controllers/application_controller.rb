@@ -1,4 +1,6 @@
-require "application_responder"
+# frozen_string_literal: true
+
+require 'application_responder'
 
 class ApplicationController < ActionController::API
   self.responder = ApplicationResponder
@@ -10,8 +12,7 @@ class ApplicationController < ActionController::API
     if resource.errors.empty?
       render jsonapi: resource
     else
-      render jsonapi_errors: resource.errors, status: 400
+      render jsonapi_errors: resource.errors, status: :bad_request
     end
   end
-
 end

@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 require 'faker'
 require 'factory_bot_rails'
 
 module UserHelpers
-  def create_user # creates user in db
+  # creates user in db
+  def create_user
     FactoryBot.create(:user,
-      email: Faker::Internet.email,
-      password: Faker::Internet.password
-    )
+                      email: Faker::Internet.email,
+                      password: Faker::Internet.password)
   end
 
-  def build_user # returns attributes, but does not create
+  # returns attributes, but does not create
+  def build_user
     FactoryBot.build(:user,
-      email: Faker::Internet.email,
-      password: Faker::Internet.password
-    )
+                     email: Faker::Internet.email,
+                     password: Faker::Internet.password)
   end
 end
