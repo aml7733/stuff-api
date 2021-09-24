@@ -7,29 +7,43 @@ module Api
 
     respond_to :json
 
+    # GET /api/boxes
     def index
       @boxes = Box.all
-      respond_with(@boxes)
+      render json: @boxes, status: :ok
     end
 
+    # GET /api/boxes/1
     def show
-      respond_with(@box)
+      render json: @box, status: :ok
     end
 
+    # POST api/boxes
     def create
       @box = Box.new(box_params)
-      @box.save
-      respond_with(@box)
+      if @box.save
+        render json: @box, status: :created
+      else
+        render json: @box.errors, status: :unprocessable_entity
+      end
     end
 
+    # PATCH /api/box/1
     def update
-      @box.update(box_params)
-      respond_with(@box)
+      if @box.update(box_params)
+        render json: @box, status: :ok
+      else
+        render json: @box.errors, status: :unprocessable_entity
+      end
     end
 
+    # DELETE /api/box/1
     def destroy
-      @box.destroy
-      respond_with(@box)
+      if @box.destroy
+        render json: @box, status: :no_content
+      else
+        render json: @box.errors, status: :unprocessable_entity
+      end
     end
 
     private

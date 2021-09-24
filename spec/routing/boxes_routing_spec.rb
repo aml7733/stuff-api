@@ -2,30 +2,30 @@
 
 require 'rails_helper'
 
-RSpec.describe BoxesController, type: :routing do
+RSpec.describe Api::BoxesController, type: :routing do
   describe 'routing' do
     it 'routes to #index' do
-      expect(get: '/boxes').to route_to('boxes#index')
+      expect(get: '/api/boxes').to route_to('api/boxes#index', format: :json)
     end
 
     it 'routes to #show' do
-      expect(get: '/boxes/1').to route_to('boxes#show', id: '1')
+      expect(get: '/api/boxes/1').to route_to('api/boxes#show', id: '1', format: :json)
     end
 
     it 'routes to #create' do
-      expect(post: '/boxes').to route_to('boxes#create')
+      expect(post: '/api/boxes').to route_to('api/boxes#create', format: :json)
     end
 
     it 'routes to #update via PUT' do
-      expect(put: '/boxes/1').to route_to('boxes#update', id: '1')
+      expect(put: '/api/boxes/1').to route_to('api/boxes#update', id: '1', format: :json)
     end
 
     it 'routes to #update via PATCH' do
-      expect(patch: '/boxes/1').to route_to('boxes#update', id: '1')
+      expect(patch: '/api/boxes/1').to route_to('api/boxes#update', id: '1', format: :json)
     end
 
     it 'routes to #destroy' do
-      expect(delete: '/boxes/1').to route_to('boxes#destroy', id: '1')
+      expect(delete: '/api/boxes/1').to route_to('api/boxes#destroy', id: '1', format: :json)
     end
   end
 end

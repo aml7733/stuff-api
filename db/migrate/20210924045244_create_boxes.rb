@@ -6,7 +6,7 @@ class CreateBoxes < ActiveRecord::Migration[6.1]
     create_table :boxes do |t|
       t.string :name
       t.string :description
-      t.string :type
+      t.string :box_type
 
       t.timestamps
     end

@@ -1,6 +1,10 @@
 require:
   - rubocop-performance
   - rubocop-rails
+AllCops:
+  Exclude:
+    - "db/schema.rb"
+    - "bin/**"
 Metrics/BlockLength:
   Exclude:
     - "Rakefile"
