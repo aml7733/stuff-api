@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Helper to log in for test auth
 module ApiHelpers
   def json
     JSON.parse(response.body)

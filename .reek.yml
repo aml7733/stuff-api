@@ -1,0 +1,6 @@
+exclude_paths:
+  - app/channels
+  - app/jobs
+  - app/mailers
+  - db/migrate
+  - spec/support

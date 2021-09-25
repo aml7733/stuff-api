@@ -9,40 +9,40 @@ module Api
 
     # GET /api/boxes
     def index
-      @boxes = Box.all
-      render json: @boxes, status: :ok
+      boxes = Box.all
+      render json: boxes, status: :ok
     end
 
     # GET /api/boxes/1
     def show
-      render json: @box, status: :ok
+      render json: box, status: :ok
     end
 
     # POST api/boxes
     def create
-      @box = Box.new(box_params)
-      if @box.save
-        render json: @box, status: :created
+      box = Box.new(box_params)
+      if box.save
+        render json: box, status: :created
       else
-        render json: @box.errors, status: :unprocessable_entity
+        render json: box.errors, status: :unprocessable_entity
       end
     end
 
     # PATCH /api/box/1
     def update
-      if @box.update(box_params)
-        render json: @box, status: :ok
+      if box.update(box_params)
+        render json: box, status: :ok
       else
-        render json: @box.errors, status: :unprocessable_entity
+        render json: box.errors, status: :unprocessable_entity
       end
     end
 
     # DELETE /api/box/1
     def destroy
-      if @box.destroy
-        render json: @box, status: :no_content
+      if box.destroy
+        render json: box, status: :no_content
       else
-        render json: @box.errors, status: :unprocessable_entity
+        render json: box.errors, status: :unprocessable_entity
       end
     end
 
@@ -55,5 +55,7 @@ module Api
     def box_params
       params.require(:box).permit(:name, :description)
     end
+
+    attr_reader :box, :boxes
   end
 end
