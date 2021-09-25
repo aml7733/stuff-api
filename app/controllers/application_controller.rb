@@ -10,10 +10,11 @@ class ApplicationController < ActionController::API
   respond_to :json
 
   def render_jsonapi_response(resource)
-    if resource.errors.empty?
+    errors = resource.errors
+    if errors.empty?
       render jsonapi: resource
     else
-      render jsonapi_errors: resource.errors, status: :bad_request
+      render jsonapi_errors: errors, status: :bad_request
     end
   end
 end

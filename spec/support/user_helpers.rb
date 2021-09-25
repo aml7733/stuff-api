@@ -3,6 +3,7 @@
 require 'faker'
 require 'factory_bot_rails'
 
+# Helpers for User request spec
 module UserHelpers
   # creates user in db
   def create_user

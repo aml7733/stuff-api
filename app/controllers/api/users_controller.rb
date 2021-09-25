@@ -6,7 +6,7 @@ module Api
     before_action :find_user, only: %w[show]
 
     def show
-      render_jsonapi_response(@user)
+      render_jsonapi_response(user)
     end
 
     private
@@ -14,5 +14,7 @@ module Api
     def find_user
       @user = User.find(params[:id])
     end
+
+    attr_accessor :user
   end
 end
