@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Add referenes for self join
 class AddReferencesToBoxes < ActiveRecord::Migration[6.1]
   def change

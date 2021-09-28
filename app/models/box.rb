@@ -6,6 +6,6 @@ class Box < ApplicationRecord
   validates :box_type, presence: true, allow_blank: true
   validates :description, presence: true
 
-  has_many :children, class_name: 'Box', foreign_key: 'parent_id'
+  has_many :children, class_name: 'Box', foreign_key: 'parent_id', dependent: :destroy, inverse_of: :parent
   belongs_to :parent, class_name: 'Box', optional: true
 end
