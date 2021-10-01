@@ -2,9 +2,11 @@ require:
   - rubocop-performance
   - rubocop-rails
 AllCops:
+  NewCops: enable
   Exclude:
     - "db/schema.rb"
     - "bin/**"
+    - "spec/factories/*.rb"
 Metrics/BlockLength:
   Exclude:
     - "Rakefile"

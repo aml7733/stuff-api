@@ -53,7 +53,7 @@ module Api
     end
 
     def box_params
-      params.require(:box).permit(:name, :description)
+      params.require(:box).permit(:name, :box_type, :description)
     end
 
     attr_reader :box, :boxes

@@ -9,10 +9,10 @@ module Api
 
     def not_found
       render json: {
-        'errors': [
+        errors: [
           {
-            'status': '404',
-            'title': 'Not Found'
+            status: '404',
+            title: 'Not Found'
           }
         ]
       }, status: :not_found
