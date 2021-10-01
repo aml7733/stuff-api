@@ -23,7 +23,7 @@ describe Api::BoxesController, type: :request do
 
   let(:valid_headers) do
     login_with_api(user)
-    { 'Authorization': response.headers['Authorization'] }
+    { Authorization: response.headers['Authorization'] }
   end
 
   describe 'GET /index' do

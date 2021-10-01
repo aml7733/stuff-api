@@ -9,7 +9,7 @@ describe Api::UsersController, type: :request do
     before do
       login_with_api(user)
       get "/api/users/#{user.id}", headers: {
-        'Authorization': response.headers['Authorization']
+        Authorization: response.headers['Authorization']
       }
     end
 
@@ -27,7 +27,7 @@ describe Api::UsersController, type: :request do
     before do
       login_with_api(user)
       get '/api/users/blank', headers: {
-        'Authorization': response.headers['Authorization']
+        Authorization: response.headers['Authorization']
       }
     end
 
